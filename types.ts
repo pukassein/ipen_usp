@@ -1,7 +1,7 @@
 
 export interface Contact {
   name: string;
-  email?: string;
+  email?: string | string[];
   ramal?: string;
   details?: string;
   isWhatsapp?: boolean;

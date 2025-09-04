@@ -6,32 +6,43 @@ interface ContactItemProps {
   contact: Contact;
 }
 
-export const ContactItem: React.FC<ContactItemProps> = ({ contact }) => {
-  const [copied, setCopied] = useState(false);
+const EmailRow: React.FC<{ email: string }> = ({ email }) => {
+    const [copied, setCopied] = useState(false);
 
-  const handleCopy = (text: string) => {
-    navigator.clipboard.writeText(text).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  };
+    const handleCopy = (text: string) => {
+        navigator.clipboard.writeText(text).then(() => {
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        });
+    };
+
+    return (
+        <div className="flex items-center space-x-2 text-gray-500 dark:text-gray-400">
+            <i className="fas fa-envelope fa-fw text-gray-400"></i>
+            <span className="flex-grow">{email}</span>
+            <button
+                onClick={() => handleCopy(email)}
+                className="text-gray-400 hover:text-ipen-blue dark:hover:text-ipen-gold transition-colors text-xs p-1"
+                title="Copiar email"
+            >
+                {copied ? <i className="fas fa-check text-green-500"></i> : <i className="fas fa-copy"></i>}
+            </button>
+        </div>
+    );
+};
+
+
+export const ContactItem: React.FC<ContactItemProps> = ({ contact }) => {
+    const renderEmails = () => {
+        if (!contact.email) return null;
+        const emails = Array.isArray(contact.email) ? contact.email : [contact.email];
+        return emails.map((email, index) => <EmailRow key={index} email={email} />);
+    };
 
   return (
     <div className="flex flex-col text-sm">
         <p className="font-semibold text-gray-700 dark:text-gray-300">{contact.name}</p>
-        {contact.email && (
-            <div className="flex items-center space-x-2 text-gray-500 dark:text-gray-400">
-                <i className="fas fa-envelope fa-fw text-gray-400"></i>
-                <span className="flex-grow">{contact.email}</span>
-                <button
-                    onClick={() => handleCopy(contact.email ?? '')}
-                    className="text-gray-400 hover:text-ipen-blue dark:hover:text-ipen-gold transition-colors text-xs p-1"
-                    title="Copiar email"
-                >
-                    {copied ? <i className="fas fa-check text-green-500"></i> : <i className="fas fa-copy"></i>}
-                </button>
-            </div>
-        )}
+        {renderEmails()}
         {contact.ramal && (
             <div className="flex items-center space-x-2 text-gray-500 dark:text-gray-400">
                 <i className="fas fa-phone fa-fw text-gray-400"></i>

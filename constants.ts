@@ -1,4 +1,3 @@
-
 import { ContactSection, LinkItem } from './types';
 
 export const contactSections: ContactSection[] = [
@@ -7,9 +6,8 @@ export const contactSections: ContactSection[] = [
     title: 'Secretaria de Pós-Graduação',
     contacts: [
       { name: 'Sara', email: 'spgipen@ipen.br', ramal: '1600' },
-      { name: 'Rosana', email: 'spgipen01@ipen.br', ramal: '5971' },
-      { name: 'Bianca (Graduação e PAE)', email: 'bianca.m-plansul@ipen.br', ramal: '1564' },
-      { name: 'Alternativo', email: 'ppgtn@cnen.gov.br' },
+      { name: 'Rosana', email: 'ppgtn@cnen.gov.br', ramal: '5971' },
+      { name: 'Bianca (Graduação e PAE)', email: 'ipen.pae@gmail.com', ramal: '1564' },
     ],
   },
   {
@@ -29,8 +27,7 @@ export const contactSections: ContactSection[] = [
     id: 'pae',
     title: 'Estágio PAE',
     contacts: [
-        { name: 'Bianca', email: 'bianca.m-plansul@ipen.br', ramal: '1564' },
-        { name: 'Email Principal', email: 'ipen.pae@gmail.com' },
+        { name: 'Bianca', email: 'ipen.pae@gmail.com', ramal: '1564' },
     ],
   },
   {
