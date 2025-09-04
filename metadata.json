@@ -1,0 +1,5 @@
+{
+  "name": "Portal do Aluno IPEN/USP",
+  "description": "Um portal não-oficial para centralizar informações importantes, contatos e links para os alunos de pós-graduação do IPEN/USP, facilitando o acesso a recursos essenciais.",
+  "requestFramePermissions": []
+}
