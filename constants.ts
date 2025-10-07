@@ -36,6 +36,7 @@ export const contactSections: ContactSection[] = [
     contacts: [
         { name: 'Email', email: 'bibl@ipen.br' },
         { name: 'WhatsApp', details: '(11) 99794-7917', isWhatsapp: true },
+        { name: 'Verificação de Teses e Dissertações', email: 'verificateses@ipen.br', details: 'Fone: 2810-5797 (Bibliotecária Celia)' },
     ],
   },
   {
