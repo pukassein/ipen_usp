@@ -14,8 +14,21 @@ export interface ContactSection {
 }
 
 export interface LinkItem {
-  id: string;
+  id:string;
   title: string;
   url: string;
   description: string | string[];
+}
+
+export interface Professor {
+  name: string;
+  lattesUrl: string;
+  email: string;
+}
+
+export interface ProfessorAreaSection {
+  id: 'TNR' | 'TNA' | 'TNM';
+  title: string;
+  fullName: string;
+  professors: Professor[];
 }
